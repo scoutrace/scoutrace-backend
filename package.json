@@ -11,7 +11,8 @@
     "optimist": "0.3.4",
     "sails-mongo": "~0.9.7",
     "uuid": "~1.4.1",
-    "jasmin-node": "1.14.3"
+    "jasmin-node": "1.14.3",
+    "jade": "~1.3.1"
   },
   "scripts": {
     "start": "node app.js",
