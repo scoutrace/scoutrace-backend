@@ -9,6 +9,9 @@
 module.exports = {
 
 	attributes: {
+		id: {
+			type: 'uuidv4'
+		},
 		name : {
 			type : 'string',
 			required : true
@@ -22,6 +25,10 @@ module.exports = {
 		endDate : {
 			type : 'date'
 		}
+	},
+	beforeCreate: function(data, callback) {
+		var uuid = require('uuid');
+		data.id = uuid.v4();
+		return callback();
 	}
-
 };
