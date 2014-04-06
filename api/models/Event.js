@@ -7,7 +7,7 @@
  */
 
 module.exports = {
-
+	schema: true,
 	attributes: {
 		id: {
 			type: 'uuidv4'
