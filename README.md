@@ -2,7 +2,7 @@
 ### Installation instructions
 Set your persistent settings in config/local.js like so
 
-``
+```
 module.exports = {
 
 	port: process.env.PORT || 1337,
@@ -17,5 +17,5 @@ module.exports = {
 		}
 	}
 };
-``
+```
 
