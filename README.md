@@ -1,2 +1,2 @@
-scoutrace-backend
-=================
+# sctrc
+### a Sails application
