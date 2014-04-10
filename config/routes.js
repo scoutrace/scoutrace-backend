@@ -34,7 +34,14 @@ module.exports.routes = {
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
     view: 'home/index'
-  }
+  },
+	'/confirm' : {
+	view: 'myfile/confirm'
+	},
+	'/getfile/:filename': {
+		controller: 'myfile',
+		action: 'getfile'
+}
 
   /*
   // But what if you want your home page to display
@@ -42,7 +49,7 @@ module.exports.routes = {
   '/': {
     view: 'user/signup'
   }
-
+	
 
   // Let's say you're building an email client, like Gmail
   // You might want your home route to serve an interface using custom logic.
