@@ -1,9 +1,9 @@
 module.exports = {
-	saveUser: function(userid, user, provider, req, res) {
+	saveUser: function(userid, user, req, res) {
 		User.findOne({uid:userid},function(err, myuser) {
 			if (err || (myuser == undefined)) {
 				User.create({
-					provider: provider,
+					provider: ''+user.provider,
 					uid: ''+user.id,
 					name: user.username,
 					email: user.emails[0].value,

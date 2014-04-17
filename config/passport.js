@@ -26,6 +26,16 @@ function(accessToken, refreshToken, profile, done) {
 	});
 }));
 
+passport.use(new TwitterStrategy({
+	consumerKey: ids.twitter.consumerKey,
+	consumerSecret: ids.twitter.consumerSecret,
+	callbackURL: ids.twitter.callbackURL
+},
+function(accessToken, refreshToken, profile, done) {
+	process.nextTick(function () {
+		return done(null, profile);
+	});
+}));
 passport.use(new GithubStrategy({
 	clientID: ids.github.clientID,
 	clientSecret: ids.github.clientSecret,

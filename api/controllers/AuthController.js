@@ -43,7 +43,7 @@ module.exports = {
 					user.name = {};
 					user.name.givenName = user.displayName.split(' ')[0];
 					user.name.familyName = user.displayName.split(' ')[1];
-					authHelper.saveUser(userid, user, 'github', req, res);
+					authHelper.saveUser(userid, user, req, res);
                 });
             })(req, res);
     },
@@ -59,11 +59,30 @@ module.exports = {
                         return;
                     }
 					var userid = user.id;
-					authHelper.saveUser(userid, user, 'facebook', req, res);
+					authHelper.saveUser(userid, user, req, res);
                 });
             })(req, res);
     },
 
+    twitter: function (req, res) {
+        passport.authenticate('twitter', { failureRedirect: '/login', scope: ['email'] },
+            function (err, user) {
+                req.logIn(user, function (err) {
+                    if (err) {
+                        res.view('500');
+                        return;
+                    }
+					var userid = user.id;
+					user.name = {};
+					user.name.givenName = user.displayName;
+					user.name.familyName = user.displayName;
+					if (!user.emails) {
+						user.emails = [{value:'NONE'}];
+					}
+					authHelper.saveUser(userid, user, req, res);
+                });
+            })(req, res);
+    },
     // https://developers.google.com/
     // https://developers.google.com/accounts/docs/OAuth2Login#scope-param
     google: function (req, res) {
