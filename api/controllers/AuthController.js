@@ -16,6 +16,7 @@
  */
 
 var passport = require('passport');
+var authHelper = require('../services/authenticationHelpers');
 
 module.exports = {
 
@@ -55,7 +56,9 @@ module.exports = {
                         res.view('500');
                         return;
                     }
-					var userid = user.id;	
+					var userid = user.id;
+					authHelper.saveUser(userid, user, 'facebook', req, res);
+					/*
 					User.findOne({uid:userid},function(err, myuser) {
 						if (err || (myuser == undefined)) {
 							User.create({
@@ -83,6 +86,7 @@ module.exports = {
                     		return;
 						}
 					});
+					*/
                 });
             })(req, res);
     },
