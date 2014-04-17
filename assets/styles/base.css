@@ -1,0 +1,151 @@
+html {
+  font-size: .85em;
+}
+
+body {
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+th {
+  font-family: "CoreSlabM55Medium", "Arial Black";
+  font-weight: normal;
+  margin: 0.5em 0 0.25em !important;
+}
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+.h1 strong, .h2 strong, .h3 strong, .h4 strong, .h5 strong, .h6 strong,
+th strong {
+  font-family: "CoreSlabM65Bold";
+  font-weight: normal;
+}
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+.h1 em, .h2 em, .h3 em, .h4 em, .h5 em, .h6 em,
+th em {
+  font-family: "CoreSlabM55Medium-Italic", "Arial Black";
+  font-style: normal;
+}
+h1 strong em, h1 em strong, h2 strong em, h2 em strong, h3 strong em, h3 em strong, h4 strong em, h4 em strong, h5 strong em, h5 em strong, h6 strong em, h6 em strong,
+.h1 strong em,
+.h1 em strong, .h2 strong em, .h2 em strong, .h3 strong em, .h3 em strong, .h4 strong em, .h4 em strong, .h5 strong em, .h5 em strong, .h6 strong em, .h6 em strong,
+th strong em,
+th em strong {
+  font-family: "CoreSlabM65Bold-Italic", "Arial Black";
+}
+
+h1, .h1 {
+  font-size: 2em;
+}
+
+h2, .h2 {
+  font-size: 1.7em;
+}
+
+h3, .h3 {
+  font-size: 1.5em;
+}
+
+h4, .h4 {
+  font-size: 1.3em;
+}
+
+h5, .h5 {
+  font-size: 1.1em;
+}
+
+h6, .h6 {
+  font-size: 1.1em;
+  opacity: .8;
+}
+
+.table thead > tr > th {
+  padding: .7em .7em .3em;
+}
+
+a {
+  color: #3a93cc;
+}
+
+.small {
+  font-size: .8em;
+}
+
+.logo {
+  height: 2em;
+  margin: -0.8em 0 -0.5em;
+}
+
+.navbar {
+  background: #3a93cc;
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.4);
+  font-family: "CoreSlabM45Regular", inherit;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+.navbar strong {
+  font-family: "CoreSlabM65Bold";
+  font-weight: normal;
+}
+.navbar em {
+  font-family: "CoreSlabM45Regular-Italic", inherit;
+  font-style: normal;
+}
+.navbar strong em, .navbar em strong {
+  font-family: "CoreSlabM65Bold-Italic";
+}
+.navbar .icon-bar {
+  background-color: white;
+}
+.navbar a {
+  color: white;
+}
+
+.navbar-brand {
+  font-family: "CoreSlabM55Medium", inherit;
+  padding: 17px 15px 13px;
+}
+
+.navbar-nav > li > a {
+  padding: 16px 15px 14px;
+}
+.navbar-nav > li > a:hover, .navbar-nav > li > a.active {
+  background: #4e9ed1;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    border: 1px solid #2f80b4;
+    border-width: 0 1px;
+    margin-right: -1px;
+  }
+}
+.inline-block {
+  display: inline-block;
+}
+
+.progress.inline-block {
+  width: 15em;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.progress-bar {
+  font-size: inherit;
+  line-height: 1.7em;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+.admin-color {
+  color: blue;
+}
+
+.crew-color {
+  color: orange;
+}
+
+.participant-color {
+  color: green;
+}

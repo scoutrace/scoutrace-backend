@@ -1,0 +1,103 @@
+
+<div class="row">
+	{{#if currentEvents}}
+		<div class="col-sm-7">
+			<h2>Løb lige nu</h2>
+			Aktuelle løb (admin, post & deltager)
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Løb</th>
+						<th>Statistik</th>
+						<th>Din rolle</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each currentEvents}}
+					<tr>
+						<td>{{name}}</td>
+						<td>
+							<div class="progress inline-block">
+								{{#if isAdmin}}
+									<div class="progress-bar progress-bar-warning" style="width: 40%;"></div>
+									<div class="progress-bar" style="width: 20%;"></div>
+									<div class="progress-bar progress-bar-success" style="width: 40%"></div>
+								{{/if}}
+								{{#if isCrew}}
+									<div class="progress-bar progress-bar-warning" style="width: 20%;"></div>
+									<div class="progress-bar" style="width: 20%;"></div>
+									<div class="progress-bar progress-bar-success" style="width: 40%"></div>
+								{{/if}}
+								{{#if isParticipant}}
+									<div class="progress-bar" style="width: 20%;"></div>
+									<div class="progress-bar progress-bar-success" style="width: 40%"></div>
+								{{/if}}
+							</div>
+						</td>
+						<td>
+							<span {{bind-attr class=":glyphicon :glyphicon-user isAdmin:admin-color isCrew:crew-color isParticipant:participant-color"}}>
+								{{userType}}
+							</span>
+						</td>
+					</tr>
+				{{/each}}
+				</tbody>
+			</table>
+
+			<hr/>
+
+			<div class="row small">
+				<div class="col-xs-6">
+					<h3>Statistik</h3>
+					<ul class="list-unstyled">
+						<li>
+							<div class="progress inline-block">
+								<div class="progress-bar progress-bar-warning" style="width: 100%;">
+									Ikke startede
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="progress inline-block">
+								<div class="progress-bar" style="width: 100%;">
+									I gang
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="progress inline-block">
+								<div class="progress-bar progress-bar-success" style="width: 100%;">
+									Færdige
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-6">
+					<h3>Din rolle</h3>
+					<ul class="list-unstyled">
+						<li><span class="glyphicon glyphicon-user participant-color"></span> Deltager</li>
+						<li><span class="glyphicon glyphicon-user crew-color"></span> Postmandskab</li>
+						<li><span class="glyphicon glyphicon-user admin-color"></span> Administrator</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+
+	{{#if currentEvents}}
+	{{/if}}
+
+	<div class="col-xs-5">
+		<h2>Mine løb</h2>
+		{{#if events}}
+		{{else}}
+			<p>Du har har endnu ikke oprettet nogle løb.</p>
+			<p><a href="" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Opret dit første løb</a></p>
+		{{/if}}
+	</div>
+</div>
+
+
+Antal tilmeldte deltagere, antal startede, antal afsluttede, bar der viser hvor langt holdene er noget (førende, gennemsnit, bagerste)
