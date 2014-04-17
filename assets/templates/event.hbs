@@ -1,0 +1,12 @@
+{{#if isEditing}}
+	<form {{action 'doneEditing' on='submit'}}>
+		<h1>{{title}}</h1>
+		<p>{{view App.FocusedTextField class="form-control" valueBinding=title}}</p>
+		{{input type="hidden" valueBinding="identifier"}}
+		<button type="button" class="btn" {{action 'cancelEditing'}}>Fortryd</button>
+		<button class="btn btn-success">Gem</button>
+	</form>
+{{else}}
+	<h1>{{title}}</h1>
+	<button class="btn" {{action 'edit'}}>Redigér</button>
+{{/if}}

@@ -1,0 +1,43 @@
+@keyframes spin-forever {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin-forever {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+body {
+  padding-top: 4.5em;
+}
+
+.big-spinner {
+  width: .1em;
+  height: .1em;
+  background: white;
+  position: fixed;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  border: 2em dashed #aaa;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1em #aaa;
+  animation: spin-forever 1.5s infinite linear;
+  -webkit-animation: spin-forever 1.5s infinite linear;
+  padding: 0.1em;
+}
+
+input.form-control {
+  max-width: 25em;
+}
