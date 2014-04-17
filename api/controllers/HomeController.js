@@ -26,9 +26,7 @@ module.exports = {
   _config: {},
 
 	index: function(req, res) {
-		console.log('HESTHEST');
 		var myuser = req.session.user || "NO USER";
-		console.log(req.session.user);
 		return res.view({user: JSON.stringify(myuser)});
 	}
 };

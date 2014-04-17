@@ -35,7 +35,6 @@ module.exports = {
             function (err, user) {
                 req.logIn(user, function (err) {
                     if (err) {
-                        console.log(err);
                         res.view('500');
                         return;
                     }
@@ -53,13 +52,11 @@ module.exports = {
             function (err, user) {
                 req.logIn(user, function (err) {
                     if (err) {
-                        console.log(err);
                         res.view('500');
                         return;
                     }
 					var userid = user.id;	
 					User.findOne({uid:userid},function(err, myuser) {
-						console.log(myuser);
 						if (err || (myuser == undefined)) {
 							User.create({
 								provider: 'facebook',
@@ -72,10 +69,9 @@ module.exports = {
   								// Error handling
 								if (err) {
 				                    res.redirect('/');
-									return console.log(err);
+									return;
 								// The User was created successfully!
 								} else {
-									console.log("User created:", user);
 									req.session.user = user;
 				                    res.redirect('/');
                 				    return;
@@ -98,7 +94,6 @@ module.exports = {
             function (err, user) {
                 req.logIn(user, function (err) {
                     if (err) {
-                        console.log(err);
                         res.view('500');
                         return;
                     }
