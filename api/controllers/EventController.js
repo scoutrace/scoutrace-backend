@@ -18,8 +18,6 @@
 module.exports = {
 
 	find: function(request, response) {
-		console.log(request.param('id'));
-
 		Event.find({id : '534ffe648dd75110711580d1'}).populate('activities').exec(function(error, event) {
 			if (error) {
 				return response.json(error, 400);
