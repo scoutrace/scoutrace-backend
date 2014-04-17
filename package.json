@@ -11,7 +11,6 @@
     "optimist": "0.3.4",
     "passport": "^0.2.0",
     "passport-facebook": "^1.0.3",
-    "passport-github": "^0.1.5",
     "passport-google": "^0.3.0",
     "passport-twitter": "^1.0.2",
     "sails": "0.9.16",
