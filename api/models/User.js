@@ -10,7 +10,7 @@ module.exports = {
 
     attributes	: {
         provider: 'STRING',
-        uid: 'INTEGER',
+        uid: 'STRING',
         name: 'STRING',
         email: 'STRING',
         firstname: 'STRING',

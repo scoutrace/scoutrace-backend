@@ -58,12 +58,12 @@ module.exports = {
                         return;
                     }
 					var userid = user.id;	
-					User.findOne({uid:userid},function(err, user) {
-						console.log(user);
-						if (err) {
+					User.findOne({uid:userid},function(err, myuser) {
+						console.log(myuser);
+						if (err || (myuser == undefined)) {
 							User.create({
 								provider: 'facebook',
-								uid: user.id,
+								uid: ''+user.id,
 								name: user.username,
 								email: user.emails[0].value,
 								firstname: user.name.givenName,
@@ -82,7 +82,7 @@ module.exports = {
 								}
 							});
 						} else {
-							req.session.user = user;
+							req.session.user = myuser;
                     		res.redirect('/');
                     		return;
 						}

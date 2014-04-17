@@ -28,7 +28,7 @@ module.exports = {
 	index: function(req, res) {
 		console.log('HESTHEST');
 		var myuser = req.session.user || "NO USER";
-		console.log(req.user);
+		console.log(req.session.user);
 		return res.view({user: JSON.stringify(myuser)});
 	}
 };

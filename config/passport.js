@@ -3,7 +3,7 @@ var ids = {
 facebook: {
  clientID: '529494700475933',
  clientSecret: '1bc6d383ef9fde58d25224777d5ded4a',
- callbackURL: 'http://scoutrace.local:1337/auth/facebook'
+ callbackURL: 'http://scoutrace.local:1337/auths/facebook'
 },
 twitter: {
  consumerKey: 'get_your_own',
