@@ -57,9 +57,36 @@ module.exports = {
                         res.view('500');
                         return;
                     }
-
-                    res.redirect('/');
-                    return;
+					var userid = user.id;	
+					User.findOne({uid:userid},function(err, user) {
+						console.log(user);
+						if (err) {
+							User.create({
+								provider: 'facebook',
+								uid: user.id,
+								name: user.username,
+								email: user.emails[0].value,
+								firstname: user.name.givenName,
+								lastname: user.name.familyName
+							}).done(function(err, user) {
+  								// Error handling
+								if (err) {
+				                    res.redirect('/');
+									return console.log(err);
+								// The User was created successfully!
+								} else {
+									console.log("User created:", user);
+									req.session.user = user;
+				                    res.redirect('/');
+                				    return;
+								}
+							});
+						} else {
+							req.session.user = user;
+                    		res.redirect('/');
+                    		return;
+						}
+					});
                 });
             })(req, res);
     },
