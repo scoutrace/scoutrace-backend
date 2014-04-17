@@ -39,9 +39,11 @@ module.exports = {
                         res.view('500');
                         return;
                     }
-
-                    res.redirect('/');
-                    return;
+					var userid = user.id;
+					user.name = {};
+					user.name.givenName = user.displayName.split(' ')[0];
+					user.name.familyName = user.displayName.split(' ')[1];
+					authHelper.saveUser(userid, user, 'github', req, res);
                 });
             })(req, res);
     },
@@ -58,35 +60,6 @@ module.exports = {
                     }
 					var userid = user.id;
 					authHelper.saveUser(userid, user, 'facebook', req, res);
-					/*
-					User.findOne({uid:userid},function(err, myuser) {
-						if (err || (myuser == undefined)) {
-							User.create({
-								provider: 'facebook',
-								uid: ''+user.id,
-								name: user.username,
-								email: user.emails[0].value,
-								firstname: user.name.givenName,
-								lastname: user.name.familyName
-							}).done(function(err, user) {
-  								// Error handling
-								if (err) {
-				                    res.redirect('/');
-									return;
-								// The User was created successfully!
-								} else {
-									req.session.user = user;
-				                    res.redirect('/');
-                				    return;
-								}
-							});
-						} else {
-							req.session.user = myuser;
-                    		res.redirect('/');
-                    		return;
-						}
-					});
-					*/
                 });
             })(req, res);
     },
@@ -101,7 +74,7 @@ module.exports = {
                         res.view('500');
                         return;
                     }
-
+					console.log(user);
                     res.redirect('/');
                     return;
                 });

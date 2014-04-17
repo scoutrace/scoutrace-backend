@@ -26,6 +26,16 @@ function(accessToken, refreshToken, profile, done) {
 	});
 }));
 
+passport.use(new GithubStrategy({
+	clientID: ids.github.clientID,
+	clientSecret: ids.github.clientSecret,
+	callbackURL: ids.github.callbackURL
+},
+function(accessToken, refreshToken, profile, done) {
+	process.nextTick(function () {
+		return done(null, profile);
+	});
+}));
 module.exports = {
 	express: {
 		customMiddleware: function(app){
