@@ -1,15 +1,15 @@
 // Set up paths for libraries
 require.config({
 	paths: {
-		'jquery': '../Libraries/jQuery/jquery',
-		'text': '../Libraries/Require/Plugins/Text/text',
-		'ehbs': '../Libraries/Require/Plugins/EHBS/ehbs',
-		//'ember': '../Libraries/Ember/ember',
-		'ember': '../Libraries/Ember/ember-debug',
-		'ember-data': '../Libraries/EmberData/ember-data.min',
-		'bootstrap': '../Libraries/Bootstrap/js/bootstrap.min',
-		'handlebars': '../Libraries/Handlebars/handlebars',
-		'leaflet': '../Libraries/Leaflet/leaflet'
+		'jquery': '../libraries/jQuery/jquery',
+		'text': '../libraries/Require/Plugins/Text/text',
+		'ehbs': '../libraries/Require/Plugins/EHBS/ehbs',
+		//'ember': '../libraries/Ember/ember',
+		'ember': '../libraries/Ember/ember-debug',
+		'ember-data': '../libraries/EmberData/ember-data.min',
+		'bootstrap': '../libraries/Bootstrap/js/bootstrap.min',
+		'handlebars': '../libraries/Handlebars/handlebars',
+		'leaflet': '../libraries/Leaflet/leaflet'
 	},
 	shim: {
 		'bootstrap': {
