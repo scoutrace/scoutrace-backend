@@ -29,6 +29,10 @@ module.exports = {
         res.redirect('/');
     },
 
+	status: function (req, res) {
+		res.json({ authenticated : req.isAuthenticated() });
+	},
+
     // http://developer.github.com/v3/
     // http://developer.github.com/v3/oauth/#scopes
     github: function (req, res) {
